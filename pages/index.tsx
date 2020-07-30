@@ -7,6 +7,7 @@ class LandingPage extends Component {
       <>
         <div>
           ahhhhhhhhhhhhhhhhh
+          pretend this is a landing page
         </div>
       </>
     );
