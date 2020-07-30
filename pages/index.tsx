@@ -1,5 +1,7 @@
 import React from 'react';
 import * as magenta from '@magenta/image';
+import { Button, Grid, Paper } from '@material-ui/core';
+import Previews from '../components/UploadPreview';
 
 function LandingPage() {
   const generateStylizedImage = () => {
@@ -10,7 +12,7 @@ function LandingPage() {
 
     function stylize() {
       model.stylize(contentImg, styleImg).then((imageData) => {
-        const canvas = stylizedCanvas as HTMLCanvasElement
+        const canvas = stylizedCanvas as HTMLCanvasElement;
         canvas.getContext('2d')?.putImageData(imageData, 0, 0);
       });
     }
@@ -20,10 +22,26 @@ function LandingPage() {
 
   return (
     <>
-      <img id='content' src='content.jpg' />
-      <img id='style' height='256' src='abstract-art.jpg' />
-      <canvas id='stylized' height='1000' width='1000'></canvas>
-      <button onClick={() => generateStylizedImage()}> Click here to generate your stylized image! </button>
+      <Grid container spacing={3}>
+        <Grid item>
+          <Paper elevation={6}>
+            <Previews />
+          </Paper>
+        </Grid>
+        <Grid item>
+          <Paper elevation={6}>
+            <img id='style' src='abstract-art.jpg' />
+          </Paper>
+        </Grid>
+        <Grid item>
+          <Paper elevation={6}>
+            <canvas id='stylized' height='1000' width='1000'></canvas>
+          </Paper>
+        </Grid>
+        <Button onClick={() => generateStylizedImage()}>
+          Click here to generate your stylized image!{' '}
+        </Button>
+      </Grid>
     </>
   );
 }
