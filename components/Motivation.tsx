@@ -3,16 +3,17 @@ import { Box, Typography } from '@material-ui/core';
 
 function Motivation() {
   return (
-    <Box
-      className='justify-content-end'
-      style={{ backgroundColor: '#84a98c', display: 'flex', height: '500px' }}
-    >
-      <span className='mx-5'>
-        <h2 className='display-4 justify-content-end font-weight-bold pt-5 mb-2'>
+    <>
+      <Box
+        className='flex-row-reverse'
+        style={{ backgroundColor: '#8aa2f2', display: 'flex', height: '500px' }}
+      >
+        <h2 className='display-4 font-weight-bold pt-5 mb-2 mx-5'>
           Why StyleShift?
         </h2>
         <hr />
-        <Typography>
+      <div>
+        <Typography className='justify-content-end'>
           So back in the fall semester of 2019, I took a Deep Learning
           specialization course offered by Andrew Ng and Coursera. This was part
           of an “Engineering Clinic” course that engineering majors had to take
@@ -30,8 +31,10 @@ function Motivation() {
           take this idea that's been in the back of my mind for many months and
           make it reality.
         </Typography>
-      </span>
-    </Box>
+      </div>
+      </Box>
+
+    </>
   );
 }
 
