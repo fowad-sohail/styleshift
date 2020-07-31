@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid, Paper } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 
 function Motivation() {
   return (
@@ -12,7 +12,6 @@ function Motivation() {
           Why StyleShift?
         </h2>
       </div>
-      <hr />
       <Typography className='mx-5'>
         So back in the fall semester of 2019, I took a Deep Learning
         specialization course offered by Andrew Ng and Coursera. Late in the
