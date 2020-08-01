@@ -8,26 +8,21 @@ function Introduction() {
         backgroundImage: 'url(monalisa.jpeg)',
         backgroundColor: 'rgba(32, 37, 54, .6)',
         backgroundBlendMode: 'darken',
-        display: 'flex',
         height: '350px',
       }}
     >
-      <span className='mx-5'>
+      <div className='text-center'>
         <h2
-          style={{ color: 'white' }}
+          style={{ color: '#968c8c' }}
           className='display-4 font-weight-bold pt-5 mb-2'
         >
           Welcome to StyleShift
         </h2>{' '}
-        <h4 style={{ color: 'white' }}>
+        <h4 style={{ color: '#968c8c' }}>
           Neural Style Transfer in your browser
         </h4>
-        <hr />
-        <h5 style={{ color: 'white' }}>A side project by Fowad Sohail</h5>
-      </span>
-      {/* <span className='justify-content-end' style={{ display: 'flex' }}>
-        <img className='pt-5' src={'nst_example.png'} height='300' />
-      </span> */}
+        <h5 style={{ color: '#968c8c' }}>A side project by Fowad Sohail</h5>
+      </div>
     </Box>
   );
 }
