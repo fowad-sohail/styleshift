@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box, Typography } from '@material-ui/core';
+import { Heading } from './StyledComponents';
 
 function Explanation() {
   return (
@@ -10,12 +11,7 @@ function Explanation() {
         backgroundColor: '#646e66',
       }}
     >
-      <h2
-        className='display-4 font-weight-bold pt-3 mb-2 mx-5'
-        style={{ color: '#968c8c' }}
-      >
-        What is Neural Style Transfer?
-      </h2>
+      <Heading>What is Neural Style Transfer?</Heading>
       <Typography
         className='mx-5'
         style={{ fontSize: 'x-large', color: '#968c8c' }}
@@ -23,7 +19,10 @@ function Explanation() {
         Neural style transfer is an application of deep learning in art. It
         takes two images, a "content" image and a "style" image and generates a
         third image, containing the style of the content image in the style of
-        the style image.
+        the style image. You can read more about neural style transfer{' '}
+        <a style={{ color: '#968c8c'}} href='https://www.tensorflow.org/tutorials/generative/style_transfer'>
+          here!
+        </a>
       </Typography>
     </Box>
   );
