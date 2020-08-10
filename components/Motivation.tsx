@@ -6,7 +6,7 @@ function Motivation() {
   return (
     <Box
       className='d-flex justify-content-center'
-      style={{ height: '500px', backgroundColor: '#646e66', color: '#968c8c' }}
+      style={{ height: '375px', backgroundColor: '#646e66', color: '#968c8c' }}
     >
       <Box style={{ width: '50%' }}>
         <Heading>Why StyleShift?</Heading>

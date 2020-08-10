@@ -1,7 +1,8 @@
 import React from 'react';
 import * as magenta from '@magenta/image';
 import Previews from './UploadPreview';
-import { Button, Grid, Paper } from '@material-ui/core';
+import { Heading, Paragraph } from './StyledComponents';
+import { Box, Button } from '@material-ui/core';
 
 function StyleGenerator() {
   const generateStylizedImage = () => {
@@ -21,28 +22,34 @@ function StyleGenerator() {
   };
 
   return (
-    <>
-      <Grid container spacing={3}>
-        <Grid item>
-          <Paper elevation={6}>
-            <Previews />
-          </Paper>
-        </Grid>
-        <Grid item>
-          <Paper elevation={6}>
-            <img id='style' src='abstract-art.jpg' />
-          </Paper>
-        </Grid>
-        <Grid item>
-          <Paper elevation={6}>
-            <canvas id='stylized' height='1000' width='1000'></canvas>
-          </Paper>
-        </Grid>
-        <Button onClick={() => generateStylizedImage()}>
-          Click here to generate your stylized image!{' '}
-        </Button>
-      </Grid>
-    </>
+    <Box
+      className='d-flex flex-column'
+      style={{
+        height: '375px',
+        width: '100%',
+        backgroundColor: '#646e66',
+        color: '#968c8c',
+      }}
+    >
+      <Heading>Try it out!</Heading>
+      <div
+        className='d-flex flex-row'
+        style={{ justifyContent: 'space-around' }}
+      >
+        <div>
+          <Paragraph>Content Image</Paragraph>
+          <Previews elementId="content" />
+        </div>
+        <div>
+          <Paragraph>Style Image</Paragraph>
+          <Previews elementId="style" />
+        </div>
+      </div>
+      <canvas id='stylized' height='1000' width='1000' />
+      <Button onClick={() => generateStylizedImage()}>
+        Generate your stylized image!
+      </Button>
+    </Box>
   );
 }
 

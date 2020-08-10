@@ -14,8 +14,8 @@ const thumb = {
   border: '1px solid #eaeaea',
   marginBottom: 8,
   marginRight: 8,
-  width: 1000,
-  height: 1000,
+  width: 512,
+  height: 'auto',
   padding: 4,
   boxSizing: 'border-box',
 };
@@ -32,7 +32,7 @@ const img = {
   height: 'auto',
 };
 
-function Previews(props) {
+function Previews({ elementId }) {
   const [files, setFiles] = useState([]);
   const { getRootProps, getInputProps } = useDropzone({
     accept: 'image/*',
@@ -50,7 +50,7 @@ function Previews(props) {
   const thumbs = files.map((file) => (
     <div style={thumb} key={file.name}>
       <div style={thumbInner}>
-        <img src={file.preview} style={img} />
+        <img id={elementId} src={file.preview} style={img} />
       </div>
     </div>
   ));
@@ -67,7 +67,7 @@ function Previews(props) {
     <section className='container'>
       <div {...getRootProps({ className: 'dropzone' })}>
         <input {...getInputProps()} />
-        <p>Drag 'n' drop some files here, or click to select files</p>
+        <p>Click or drag and drop an image here</p>
       </div>
       <aside>{thumbs}</aside>
     </section>
