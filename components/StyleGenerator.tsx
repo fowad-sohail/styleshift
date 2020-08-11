@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as magenta from '@magenta/image';
 import Previews from './UploadPreview';
 import { Heading, Paragraph } from './StyledComponents';
 import { Box, Button } from '@material-ui/core';
 
 function StyleGenerator() {
+  const [generated, setGenerated] = useState(false);
+
   const generateStylizedImage = () => {
+    setGenerated(true);
     const model = new magenta.ArbitraryStyleTransferNetwork();
     const contentImg = document.getElementById('content') as HTMLImageElement;
     const styleImg = document.getElementById('style') as HTMLImageElement;
@@ -38,17 +41,22 @@ function StyleGenerator() {
       >
         <div>
           <Paragraph>Content Image</Paragraph>
-          <Previews elementId="content" />
+          <Previews elementId='content' />
         </div>
         <div>
           <Paragraph>Style Image</Paragraph>
-          <Previews elementId="style" />
+          <Previews elementId='style' />
         </div>
       </div>
-      <canvas id='stylized' height='1000' width='1000' />
-      <Button onClick={() => generateStylizedImage()}>
+      <Button variant="outlined" onClick={() => generateStylizedImage()}>
         Generate your stylized image!
       </Button>
+
+      {generated ? (
+        <canvas id='stylized' height='1000' width='1000' />
+      ) : (
+        <canvas id='stylized' height='0' width='0' />
+      )}
     </Box>
   );
 }
