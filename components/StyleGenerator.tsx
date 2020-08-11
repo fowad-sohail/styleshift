@@ -48,7 +48,18 @@ function StyleGenerator() {
           <Previews elementId='style' />
         </div>
       </div>
-      <Button variant="outlined" onClick={() => generateStylizedImage()}>
+      <Button
+        className='justify-content-center'
+        variant='contained'
+        style={{
+          width: '25%',
+          marginLeft: '700px',
+          marginBottom: '50px',
+          marginTop: '50px',
+          color: '#968c8c',
+        }}
+        onClick={() => generateStylizedImage()}
+      >
         Generate your stylized image!
       </Button>
 
